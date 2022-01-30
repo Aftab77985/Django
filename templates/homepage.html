@@ -1,0 +1,24 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}HomePage{% endblock title %}
+{% block content %}
+<div class="col-md-6">
+<p class="promo-title">ENHANCING THE EXPERIENCE</p>
+<p>
+    A chatbot is an automated program that provides highly engaging, conversational
+Experiences. A chatbot responds to text messages. Many organizations that
+cannot operate user support services 24 hours a day will find chatbots to be very useful in
+dealing with user queries.
+</p>
+{% if user.is_authenticated %}
+<a href="{% url 'chatroom' %}" class="btn btn-primary">CHATBOT</a>
+{% else %}
+<a href="{% url 'login' %}" class="login">LOGIN</a>&nbsp    |    &nbsp<a href="{% url 'register' %}" class="register">REGISTER</a>
+&nbsp   <a>Please Login or Register to Continue</a>
+{%endif%}
+</div>
+<div class="col-md-6 text-center">
+    <img src="{%static 'images/rightside.png'%}" class="img-fluid">
+</div>
+{% endblock %}
